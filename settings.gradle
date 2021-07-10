@@ -1,0 +1,2 @@
+rootProject.name = "Pokemon D20"
+include ':app'
