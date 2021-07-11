@@ -11,4 +11,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    /* TODO: Add functionality to buttons that lead to other activities
+    1. Activity - Select Pokemon, show moves
+    2. Activity - Select move, show Pokemon
+    */
 }

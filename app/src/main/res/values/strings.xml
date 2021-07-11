@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Pokemon D20</string>
     <string name="title_name">Pokèmon D20</string>
+    <string name="pkmn_to_moves_string">Moves</string>
+    <string name="moves_to_pkmn_string">Pokèmon</string>
 </resources>
