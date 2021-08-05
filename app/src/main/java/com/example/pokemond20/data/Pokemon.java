@@ -9,19 +9,6 @@ public class Pokemon {
     private int id;
     private String identifier;
 
-    @Ignore
-    private int species_id;
-    @Ignore
-    private int height;
-    @Ignore
-    private int weight;
-    @Ignore
-    private int base_experience;
-    @Ignore
-    private int order;
-    @Ignore
-    private int is_default;
-
     // Proper getters
     public int getId() {
         return id;
@@ -29,5 +16,13 @@ public class Pokemon {
 
     public String getIdentifier() {
         return identifier;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 }

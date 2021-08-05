@@ -66,6 +66,7 @@
                 android:id="@+id/btnPkmnToMove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="toMoves"
                 android:text="@string/pkmn_to_moves_string"
                 android:textSize="12sp"
                 app:backgroundTint="@android:color/holo_red_dark" />
@@ -79,6 +80,7 @@
                 android:id="@+id/btnMoveToPkmn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="toMoves"
                 android:text="@string/moves_to_pkmn_string"
                 android:textSize="12sp"
                 app:backgroundTint="@android:color/holo_red_dark" />
