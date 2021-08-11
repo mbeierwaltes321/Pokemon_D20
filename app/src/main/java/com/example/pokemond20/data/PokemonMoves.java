@@ -1,17 +1,31 @@
 package com.example.pokemond20.data;
 
-import androidx.room.*;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "pokemon_moves")
 public class PokemonMoves {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     private int pokemon_move_id;
 
+    @ColumnInfo(name="pokemon_id")
+    @NonNull
     private int pokemon_id;
+
+    @NonNull
+    @ColumnInfo(name="move_id")
     private int move_id;
+
+    @NonNull
+    @ColumnInfo(name="level")
     private int level;
-    private int order;
+
+    @ColumnInfo(name="order")
+    private String order;
 
     public int getPokemon_id() {
         return pokemon_id;
@@ -25,7 +39,7 @@ public class PokemonMoves {
         return level;
     }
 
-    public int getOrder() {
+    public String getOrder() {
         return order;
     }
 
@@ -41,7 +55,7 @@ public class PokemonMoves {
         this.level = level;
     }
 
-    public void setOrder(int order) {
+    public void setOrder(String order) {
         this.order = order;
     }
 

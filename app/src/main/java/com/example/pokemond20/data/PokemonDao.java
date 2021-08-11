@@ -1,14 +1,15 @@
 package com.example.pokemond20.data;
 
-import androidx.lifecycle.LiveData;
-import androidx.room.*;
+import androidx.room.Dao;
+import androidx.room.Query;
+import com.google.common.util.concurrent.ListenableFuture;
 import java.util.List;
 
 @Dao
 public interface PokemonDao {
     @Query("SELECT * FROM pokemon WHERE id = (:id) ")
-    LiveData<List<Pokemon>> getPokemon(int id);
+    ListenableFuture<List<Pokemon>> getPokemon(int id);
 
     @Query("SELECT * FROM pokemon WHERE identifier = (:name)")
-    LiveData<List<Pokemon>> getPokemon(String name);
+    ListenableFuture<List<Pokemon>> getPokemon(String name);
 }

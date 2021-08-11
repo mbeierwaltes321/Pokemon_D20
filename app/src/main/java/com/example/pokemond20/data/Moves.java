@@ -1,13 +1,18 @@
 package com.example.pokemond20.data;
 
-import androidx.room.*;
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "moves")
 public class Moves {
     // Columns of database
     @PrimaryKey
+    @ColumnInfo(name="id")
     private int id;
 
+    @ColumnInfo(name="identifier")
     private String identifier;
 
     public int getId() { return id; }
