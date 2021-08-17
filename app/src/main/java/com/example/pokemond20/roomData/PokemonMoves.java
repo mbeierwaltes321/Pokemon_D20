@@ -1,7 +1,6 @@
-package com.example.pokemond20.data;
+package com.example.pokemond20.roomData;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

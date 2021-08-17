@@ -1,6 +1,21 @@
 <resources>
+    <!--SQL Query Strings -->
+    <string name="pokemon_id_to_moves">
+        SELECT DISTINCT pokemon_id, move_id, moves.identifier
+        FROM pokemon_moves INNER JOIN moves
+        ON move_id = moves.id WHERE pokemon_id = 1;
+    </string>
+
     <string name="app_name">Pokemon D20</string>
     <string name="title_name">Pokèmon D20</string>
     <string name="pkmn_to_moves_string">Moves</string>
     <string name="moves_to_pkmn_string">Pokèmon</string>
+    <string name="move_index_string">Move Index</string>
+    <string name="move_index_description">
+        You can search for the move set of a specific pokèmon.
+        Enter the name of a pokèmon and hit the button to display
+        all the moves it can learn.
+    </string>
+    <string name="move_index_input">Enter pokèmon name</string>
+    <string name="move_index_button">Display Moves</string>
 </resources>

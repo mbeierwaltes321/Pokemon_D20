@@ -1,4 +1,4 @@
-package com.example.pokemond20.data;
+package com.example.pokemond20.roomData;
 
 import androidx.room.Dao;
 import androidx.room.Query;

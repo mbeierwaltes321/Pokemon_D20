@@ -19,10 +19,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
-
-    // TODO: Arrange Project to work with recommended architecture
-    // TODO: Utilize Room database with project.
-    // TODO: Switch LiveData to ListenableFuture somehow...
-
 }

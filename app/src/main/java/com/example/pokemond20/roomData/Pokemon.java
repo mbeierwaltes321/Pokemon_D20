@@ -1,12 +1,11 @@
-package com.example.pokemond20.data;
+package com.example.pokemond20.roomData;
 
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
-import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.Entity;
 
-@Entity(tableName = "moves")
-public class Moves {
+@Entity(tableName = "pokemon")
+public class Pokemon {
     // Columns of database
     @PrimaryKey
     @ColumnInfo(name="id")
@@ -15,8 +14,14 @@ public class Moves {
     @ColumnInfo(name="identifier")
     private String identifier;
 
-    public int getId() { return id; }
-    public String getIdentifier() { return identifier; }
+    // Proper getters
+    public int getId() {
+        return id;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
 
     public void setId(int id) {
         this.id = id;
