@@ -11,7 +11,7 @@ public class Moves {
     @ColumnInfo(name="id")
     private int id;
 
-    @ColumnInfo(name="identifier")
+    @ColumnInfo(name="move_identifier")
     private String identifier;
 
     public int getId() { return id; }

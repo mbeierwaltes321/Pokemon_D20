@@ -11,7 +11,7 @@ public class Pokemon {
     @ColumnInfo(name="id")
     private int id;
 
-    @ColumnInfo(name="identifier")
+    @ColumnInfo(name="pokemon_identifier")
     private String identifier;
 
     // Proper getters

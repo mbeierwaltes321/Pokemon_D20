@@ -10,6 +10,6 @@ public interface PokemonDao {
     @Query("SELECT * FROM pokemon WHERE id = (:id) ")
     ListenableFuture<List<Pokemon>> getPokemon(int id);
 
-    @Query("SELECT * FROM pokemon WHERE identifier = (:name)")
+    @Query("SELECT * FROM pokemon WHERE pokemon_identifier = (:name)")
     ListenableFuture<List<Pokemon>> getPokemon(String name);
 }

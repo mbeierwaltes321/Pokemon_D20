@@ -12,7 +12,7 @@ public class PokemonListTuple {
     @NonNull
     public int MoveId;
 
-    @ColumnInfo(name= "identifier")
+    @ColumnInfo(name= "pokemon_identifier")
     public String identifier;
 }
 

@@ -11,7 +11,7 @@ public interface MovesDao {
     @Query("SELECT * FROM moves WHERE id = (:id)")
     ListenableFuture<List<Moves>> getMove(int id);
 
-    @Query("SELECT * FROM moves WHERE identifier = (:name)")
+    @Query("SELECT * FROM moves WHERE move_identifier = (:name)")
     ListenableFuture<List<Moves>> getMove(String name);
 
     @Query("SELECT * FROM moves;")
