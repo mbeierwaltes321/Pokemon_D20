@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="toMoves"
-                android:text="@string/pkmn_to_moves_string"
+                android:text="@string/pkmn_to_moves_button_string"
                 android:textSize="12sp"
                 app:backgroundTint="@android:color/holo_red_dark" />
 
@@ -80,14 +80,31 @@
                 android:id="@+id/btnMoveToPkmn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/moves_to_pkmn_string"
+                android:onClick="pokemonToMoves"
+                android:text="@string/moves_to_pkmn_button_string"
                 android:textSize="12sp"
                 app:backgroundTint="@android:color/holo_red_dark" />
         </TableRow>
 
         <TableRow
+            android:id="@+id/trSecondSelection"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/btnToStats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_stats_button"
+                android:textSize="12sp"
+                app:backgroundTint="@color/ic_temp_background" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"

@@ -28,7 +28,8 @@ public class MovesAdapter extends RecyclerView.Adapter<MovesViewHolder> {
 
         // Get element from dataset at the position and replace the contents
         // of the view with that element
-        viewHolder.getMoveTextView().setText("\u2022 " + moveDataSet.get(position).getMoveIdentifier());
+        viewHolder.getMoveTextView()
+                .setText("\u2022 " + moveDataSet.get(position).getMoveIdentifier());
     }
 
     @Override

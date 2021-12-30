@@ -9,9 +9,17 @@
         android:roundIcon="@mipmap/ic_temp_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PokemonD20">
-        <activity android:name=".MovesListActivity"
+        <activity
+            android:name=".NewStatsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PokemonToMovesActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MovesListActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation"

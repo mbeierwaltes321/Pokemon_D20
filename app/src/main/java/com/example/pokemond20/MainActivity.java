@@ -19,4 +19,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Called when the user taps the "Pokemon" button
+    public void pokemonToMoves(View view) {
+        Intent intent = new Intent(this, PokemonToMovesActivity.class);
+        startActivity(intent);
+    }
+
 }
