@@ -10,37 +10,37 @@
     <string name="title_name">Pokèmon D20</string>
 
     <!-- Pokemon To Moves Strings -->
-    <string name="pkmn_to_moves_button_string">Moves</string>
-    <string name="move_index_title">Move Index</string>
-    <string name="move_index_button">Display Moves</string>
-    <string name="move_index_input">Enter pokèmon name</string>
-    <string name="move_index_description">
-        You can search for the move set of a specific pokèmon.
+    <string name="pkmn_to_moves_button_main">Moves</string>
+    <string name="pkmn_to_moves_title">Pokèmon To Moves</string>
+    <string name="pkmn_to_moves_button">Display Moves</string>
+    <string name="pkmn_to_moves_input">Enter pokèmon name</string>
+    <string name="pkmn_to_moves_description">
         Enter the name of a pokèmon and hit the button to display
         all the moves it can learn.
     </string>
 
     <!-- Moves To Pokemon Strings -->
-    <string name="moves_to_pkmn_button_string">Pokèmon</string>
-    <string name="move_to_pokemon_title">Moves To Pokèmon</string>
-    <string name="move_to_pokemon_description">
-        You can search which pokèmon have a certain move.
-        Enter the name of a pokèmon and hit the button to display
-        all the moves it can learn
+    <string name="moves_to_pkmn_button_main">Pokèmon</string>
+    <string name="moves_to_pkmn_title">Moves To Pokèmon</string>
+    <string name="moves_to_pkmn_description">
+        Enter the name of a move and hit the button to display
+        all pokèmon that can learn it.
     </string>
-    <string name="move_to_pokemon_input">Enter move name</string>
-    <string name="move_to_pokemon_button">Display Pokèmon</string>
+    <string name="moves_to_pkmn_input">Enter move name</string>
+    <string name="moves_to_pkmn_button">Display Pokèmon</string>
 
     <!-- Pokemon Stats Strings-->
-    <string name="new_stats_button">New Stats</string>
+    <string name="new_stats_button_main">New Stats</string>
     <string name="new_stats_title">New Stats Generation</string>
     <string name="new_stats_description">Enter the name of a Pokèmon,
      and hit the button to generate new stats</string>
+    <string name="new_stats_button">Generate</string>
     <string name="new_stats_pokemon_input">Enter Pokèmon name</string>
     <string name="new_stats_pokemon_attack">Attack</string>
     <string name="new_stats_pokemon_defense">Defense</string>
     <string name="new_stats_pokemon_sp_attack">Sp. Attack</string>
     <string name="new_stats_pokemon_sp_defense">Sp. Defense</string>
+    <string name="new_stats_pokemon_speed">Speed</string>
     <string name="new_stats_pokemon_hp">HP</string>
 
 

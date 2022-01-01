@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_moves_list.xml" value="0.19583333333333333" />
+        <entry key="app/src/main/res/layout/activity_moves_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_moves_to_pokemon.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_new_stats.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_pokemon_to_moves.xml" value="0.33" />
         <entry key="app/src/main/res/layout/move_row_text.xml" value="0.5" />
@@ -16,5 +17,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

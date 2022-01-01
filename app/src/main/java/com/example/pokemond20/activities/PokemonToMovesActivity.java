@@ -1,4 +1,4 @@
-package com.example.pokemond20;
+package com.example.pokemond20.activities;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,22 +11,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.pokemond20.ListViewModel;
+import com.example.pokemond20.R;
 import com.example.pokemond20.queryData.MoveListTuple;
 import com.example.pokemond20.recyclerView.MovesAdapter;
-import com.example.pokemond20.roomData.Moves;
-import com.example.pokemond20.roomData.PokemonMoves;
 import com.google.common.util.concurrent.ListenableFuture;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class MovesListActivity extends AppCompatActivity {
+public class PokemonToMovesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_moves_list);
+        setContentView(R.layout.activity_pokemon_to_moves);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)

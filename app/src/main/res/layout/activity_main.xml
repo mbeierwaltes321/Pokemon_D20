@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <TextView
         android:id="@+id/txtTitle"
@@ -66,8 +66,8 @@
                 android:id="@+id/btnPkmnToMove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="toMoves"
-                android:text="@string/pkmn_to_moves_button_string"
+                android:onClick="pokemonToMoves"
+                android:text="@string/pkmn_to_moves_button_main"
                 android:textSize="12sp"
                 app:backgroundTint="@android:color/holo_red_dark" />
 
@@ -80,8 +80,8 @@
                 android:id="@+id/btnMoveToPkmn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="pokemonToMoves"
-                android:text="@string/moves_to_pkmn_button_string"
+                android:onClick="movesToPokemon"
+                android:text="@string/moves_to_pkmn_button_main"
                 android:textSize="12sp"
                 app:backgroundTint="@android:color/holo_red_dark" />
         </TableRow>
@@ -95,9 +95,10 @@
                 android:id="@+id/btnToStats"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/new_stats_button"
+                android:onClick="toStatsActivity"
+                android:text="@string/new_stats_button_main"
                 android:textSize="12sp"
-                app:backgroundTint="@color/ic_temp_background" />
+                app:backgroundTint="@android:color/holo_red_dark" />
 
             <View
                 android:id="@+id/view2"
@@ -106,17 +107,6 @@
 
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

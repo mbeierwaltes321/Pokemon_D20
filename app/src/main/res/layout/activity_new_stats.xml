@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewStatsActivity">
+    tools:context=".activities.NewStatsActivity">
 
     <!-- TODO: Add basic design for new Pokemon
             -User enters Pokemon
@@ -16,18 +16,21 @@
     <Button
         android:id="@+id/btnNewStatsCalculate"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text="@string/move_index_button"
+        android:layout_marginBottom="24dp"
+        android:onClick="generateStats"
+        android:text="@string/new_stats_button"
         app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toTopOf="@+id/statsLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/etextNewStatsPokemonName"
-        app:layout_constraintTop_toBottomOf="@+id/txtNewStatsDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNewStatsDescription"
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/idNewStatsTitle"
@@ -66,13 +69,17 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:ems="10"
         android:hint="@string/new_stats_pokemon_input"
         android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/btnNewStatsCalculate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNewStatsDescription" />
 
     <LinearLayout
+        android:id="@+id/statsLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -82,16 +89,39 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
         android:orientation="horizontal"
+        android:paddingRight="20dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etextNewStatsPokemonName">
+        app:layout_constraintTop_toBottomOf="@+id/etextNewStatsPokemonName"
+        tools:visibility="visible">
 
         <TableLayout
             android:id="@+id/tblStats"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
+            <!--HP-->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtNewStatsHP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:text="@string/new_stats_pokemon_hp" />
+
+                <TextView
+                    android:id="@+id/txtNewStatsHPVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N/A" />
+            </TableRow>
+
+            <!--Attack-->
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -100,10 +130,7 @@
                     android:id="@+id/txtNewStatsAttack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@color/black"
-                    android:drawableTop="@color/black"
-                    android:drawableRight="@color/black"
-                    android:drawableBottom="@color/black"
+                    android:paddingRight="20dp"
                     android:text="@string/new_stats_pokemon_attack" />
 
                 <TextView
@@ -114,6 +141,7 @@
 
             </TableRow>
 
+            <!--Defense-->
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -122,6 +150,7 @@
                     android:id="@+id/txtNewStatsDefense"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
                     android:text="@string/new_stats_pokemon_defense" />
 
                 <TextView
@@ -131,14 +160,16 @@
                     android:text="N/A" />
             </TableRow>
 
+            <!--Special Attack-->
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/txtNewStatsSpAttack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
                     android:text="@string/new_stats_pokemon_sp_attack" />
 
                 <TextView
@@ -148,14 +179,16 @@
                     android:text="N/A" />
             </TableRow>
 
+            <!--Special Defense-->
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/txtNewStatsSpDefense"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
                     android:text="@string/new_stats_pokemon_sp_defense" />
 
                 <TextView
@@ -165,22 +198,26 @@
                     android:text="N/A" />
             </TableRow>
 
+            <!--Speed-->
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:id="@+id/txtNewStatsHP"
+                    android:id="@+id/txtNewStatsSpeed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/new_stats_pokemon_hp" />
+                    android:paddingRight="20dp"
+                    android:text="@string/new_stats_pokemon_speed" />
 
                 <TextView
-                    android:id="@+id/txtNewStatsHPVal"
+                    android:id="@+id/txtNewStatsSpeedVal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="N/A" />
             </TableRow>
+
+
         </TableLayout>
 
         <Space
