@@ -57,6 +57,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
+        android:onClick="testDatabase"
         android:text="@string/moves_to_pkmn_button"
         app:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintStart_toStartOf="parent"

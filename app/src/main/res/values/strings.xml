@@ -1,13 +1,13 @@
 <resources>
-    <!--SQL Query Strings -->
-    <string name="pokemon_id_to_moves">
-        SELECT DISTINCT pokemon_id, move_id, moves.identifier
-        FROM pokemon_moves INNER JOIN moves
-        ON move_id = moves.id WHERE pokemon_id = 1;
-    </string>
-
     <string name="app_name">Pokèmon D20</string>
     <string name="title_name">Pokèmon D20</string>
+
+    <!--SQL Query Strings -->
+    <string name="pokemon_id_to_moves">
+        SELECT DISTINCT pokemon_id AS p_id, move_id AS m_id, moves.identifier AS Name
+        FROM pokemon_moves INNER JOIN moves
+        ON m_id = moves.id WHERE p_id = 1;
+    </string>
 
     <!-- Pokemon To Moves Strings -->
     <string name="pkmn_to_moves_button_main">Moves</string>

@@ -4,11 +4,9 @@ import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 
-import com.example.pokemond20.queryData.MoveListTuple;
 import com.example.pokemond20.roomData.*;
-import com.google.common.util.concurrent.ListenableFuture;
+//import com.google.common.util.concurrent.ListenableFuture;
 
-import java.util.List;
 
 public class ListViewModel extends AndroidViewModel {
     private PokemonRepository pokemonRepository;
@@ -18,13 +16,14 @@ public class ListViewModel extends AndroidViewModel {
         pokemonRepository = new PokemonRepository(application);
     }
 
-    public ListenableFuture<List<MoveListTuple>> getMovesFromPkmn(int id) {
-        return pokemonRepository.getMovesFromPkmn(id);
-    }
-
-    public ListenableFuture<List<MoveListTuple>> getMovesFromPkmn(String name) {
-        return pokemonRepository.getMovesFromPkmn(name);
-    }
+//
+//    public ListenableFuture<List<MoveListTuple>> getMovesFromPkmn(int id) {
+//        return pokemonRepository.getMovesFromPkmn(id);
+//    }
+//
+//    public ListenableFuture<List<MoveListTuple>> getMovesFromPkmn(String name) {
+//        return pokemonRepository.getMovesFromPkmn(name);
+//    }
 
 
 }

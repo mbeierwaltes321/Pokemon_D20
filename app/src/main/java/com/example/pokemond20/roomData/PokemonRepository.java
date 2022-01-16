@@ -1,37 +1,41 @@
 package com.example.pokemond20.roomData;
 
 import android.app.Application;
+
 import androidx.room.Room;
 
-import com.example.pokemond20.queryData.MoveListTuple;
+import com.example.pokemond20.roomData.daos.MovesDao;
+import com.example.pokemond20.roomData.daos.PokemonDao;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.example.pokemond20.roomData.daos.MovesDao.MoveListTuple;
+import com.example.pokemond20.roomData.daos.PokemonDao.PokemonListTuple;
+
+
 import java.util.List;
+
 
 public class PokemonRepository {
     private MovesDao movesDao;
-    private ListenableFuture<List<MoveListTuple>> pkmnMovesList;
-
     private PokemonDao pokemonDao;
-    private PokemonMovesDao pokemonMovesDao;
 
     public PokemonRepository(Application application) {
-        AppDatabase db = Room.databaseBuilder(application.getApplicationContext(),
-                AppDatabase.class, "pokemon_d20_internal_database.db")
-                .createFromAsset("database/pokemon_d20_database.db")
-                .build();
+
+        //Database from prepackaged file
+        PokemonDatabase db = Room.databaseBuilder(application.getApplicationContext(),
+           PokemonDatabase.class, "Pokemon_D20_Database")
+           .createFromAsset("database/Source_Pokemon_D20_Database.db")
+           .fallbackToDestructiveMigration()
+           .build();
 
         movesDao = db.movesDao();
         pokemonDao = db.pokemonDao();
-        pokemonMovesDao = db.pokemonMovesDao();
-    }
-
-    public ListenableFuture<List<MoveListTuple>> getMovesFromPkmn(int id) {
-        pkmnMovesList = pokemonMovesDao.pkmnToMoves(id);
-        return pkmnMovesList;
     }
 
     public ListenableFuture<List<MoveListTuple>> getMovesFromPkmn(String name) {
-        pkmnMovesList = pokemonMovesDao.pkmnToMoves(name);
-        return pkmnMovesList;
+        return movesDao.moveListFrom(name);
+    }
+
+    public ListenableFuture<List<PokemonListTuple>> getPokemonWithMove(String name) {
+        return pokemonDao.pokemonListFrom(name);
     }
 }
