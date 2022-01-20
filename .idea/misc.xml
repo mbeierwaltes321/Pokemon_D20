@@ -8,7 +8,7 @@
         <entry key="app/src/main/res/layout/activity_moves_to_pokemon.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_new_stats.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_pokemon_to_moves.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/move_row_text.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/move_row_text.xml" value="0.33" />
       </map>
     </option>
   </component>

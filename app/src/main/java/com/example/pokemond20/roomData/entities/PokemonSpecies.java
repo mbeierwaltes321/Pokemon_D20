@@ -1,10 +1,12 @@
 package com.example.pokemond20.roomData.entities;
 
+import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.RoomWarnings;
 
+@SuppressWarnings({RoomWarnings.MISMATCHED_GETTER, RoomWarnings.MISMATCHED_SETTER})
 @Entity(tableName = "pokemon_species")
 public class PokemonSpecies {
 
@@ -30,12 +32,13 @@ public class PokemonSpecies {
     @ColumnInfo(name = "color_id")
     private int colorId;
 
-    
+    @Nullable
     @ColumnInfo(name = "shape_id")
-    private int shapeId;
+    private Integer shapeId;
 
+    @Nullable
     @ColumnInfo(name = "habitat_id")
-    private int pkmnSpeciesHabitatId;
+    private Integer pkmnSpeciesHabitatId;
 
     @ColumnInfo(name = "gender_rate")
     private int genderRate;
@@ -131,7 +134,7 @@ public class PokemonSpecies {
         this.colorId = colorId;
     }
 
-    public int getShapeId() {
+    public Integer getShapeId() {
         return shapeId;
     }
 
@@ -139,7 +142,7 @@ public class PokemonSpecies {
         this.shapeId = shapeId;
     }
 
-    public int getPkmnSpeciesHabitatId() {
+    public Integer getPkmnSpeciesHabitatId() {
         return pkmnSpeciesHabitatId;
     }
 

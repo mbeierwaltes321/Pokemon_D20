@@ -4,7 +4,10 @@ import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.Room;
+import androidx.room.RoomWarnings;
 
+@SuppressWarnings({RoomWarnings.MISMATCHED_GETTER, RoomWarnings.MISMATCHED_SETTER})
 @Entity(tableName = "moves")
 public class Moves {
 

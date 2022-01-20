@@ -6,14 +6,14 @@
 //import com.example.pokemond20.R;
 //
 //public class MovesViewHolder extends RecyclerView.ViewHolder {
-//    private final TextView moveTextView;
+//    private final TextView listItemTextView;
 //
 //    public MovesViewHolder(View view) {
 //        super(view);
-//        moveTextView = (TextView) view.findViewById(R.id.moveTextView);
+//        listItemTextView = (TextView) view.findViewById(R.id.listItemTextView);
 //    }
 //
 //    public TextView getMoveTextView() {
-//        return moveTextView;
+//        return listItemTextView;
 //    }
 //}

@@ -14,13 +14,12 @@ public interface PokemonDao {
     @Query("SELECT * FROM pokemon")
     ListenableFuture<List<Pokemon>> getAllPokemon();
 
-    @Query(
-            "SELECT DISTINCT moves.id AS \"Move ID\", moves.identifier AS \"Move Identifier\"," +
-            " pokemon.id AS \"Pokemon ID\", pokemon.identifier AS \"Pokemon Identifier\"\n" +
+    @Query("SELECT DISTINCT moves.id AS \"Move ID\", moves.identifier AS \"Move Identifier\",\n" +
+            "pokemon.id AS \"Pokemon ID\", pokemon.identifier AS \"Pokemon Identifier\"\n" +
             "FROM moves INNER JOIN pokemon_moves ON \"Move ID\" = pokemon_moves.move_id\n" +
             "INNER JOIN pokemon ON \"Pokemon ID\" = pokemon_moves.pokemon_id\n" +
-            "WHERE \"Pokemon Identifier\" = " + ":moveName" + ";"
-    ) ListenableFuture<List<PokemonListTuple>> pokemonListFrom(String moveName);
+            "WHERE moves.identifier = :moveName;")
+    ListenableFuture<List<PokemonListTuple>> pokemonListFrom(String moveName);
 
     static class PokemonListTuple {
         @ColumnInfo(name = "Move ID")
