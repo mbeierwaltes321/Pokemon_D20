@@ -32,6 +32,7 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
 
     }
 
+    // Default constructor
     public PokemonListAdapter(List<PokemonDao.PokemonListTuple> pokemonList) {
         this.pokemonList = pokemonList;
     }
@@ -45,7 +46,7 @@ public class PokemonListAdapter extends RecyclerView.Adapter<PokemonListAdapter.
         return new dataListViewHolder(view);
     }
 
-    // Layout manager calls this to replace the contects of a view
+    // Layout manager calls this to replace the contents of a view
     @Override
     public void onBindViewHolder(dataListViewHolder viewHolder, final int position) {
 

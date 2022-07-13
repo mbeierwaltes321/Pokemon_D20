@@ -1,9 +1,12 @@
 package com.example.pokemond20.roomData.daos;
 
+import android.content.res.Resources;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Dao;
 import androidx.room.Query;
 
+import com.example.pokemond20.R;
 import com.example.pokemond20.roomData.entities.Pokemon;
 import com.google.common.util.concurrent.ListenableFuture;
 
@@ -14,11 +17,19 @@ public interface PokemonDao {
     @Query("SELECT * FROM pokemon")
     ListenableFuture<List<Pokemon>> getAllPokemon();
 
-    @Query("SELECT DISTINCT moves.id AS \"Move ID\", moves.identifier AS \"Move Identifier\",\n" +
-            "pokemon.id AS \"Pokemon ID\", pokemon.identifier AS \"Pokemon Identifier\"\n" +
-            "FROM moves INNER JOIN pokemon_moves ON \"Move ID\" = pokemon_moves.move_id\n" +
-            "INNER JOIN pokemon ON \"Pokemon ID\" = pokemon_moves.pokemon_id\n" +
-            "WHERE moves.identifier = :moveName;")
+    @Query("SELECT identifier FROM pokemon WHERE pokemon.is_default = true ORDER BY species_id ASC")
+    ListenableFuture<List<String>> getAllPokemonIdentifiers();
+
+
+    final String query
+            = "SELECT DISTINCT move_names.move_id AS \"Move ID\", move_names.name AS \"Move Identifier\",\n" +
+            "pokemon_species_names.pokemon_species_id AS \"Pokemon ID\", pokemon_species_names.name AS \"Pokemon Identifier\"\n" +
+            "FROM pokemon_moves INNER JOIN move_names ON pokemon_moves.move_id = move_names.move_id \n" +
+            "INNER JOIN pokemon ON pokemon_moves.pokemon_id = pokemon.id\n" +
+            "INNER JOIN pokemon_species_names ON pokemon_species_names.pokemon_species_id = pokemon.species_id\n" +
+            "WHERE LOWER(move_names.name) = :moveName AND pokemon_species_names.local_language_id = 9;";
+
+    @Query(query)
     ListenableFuture<List<PokemonListTuple>> pokemonListFrom(String moveName);
 
     static class PokemonListTuple {
@@ -29,7 +40,7 @@ public interface PokemonDao {
         private String moveIdentifier;
 
         @ColumnInfo(name = "Pokemon ID")
-        private String pokemonId;
+        private int pokemonId;
 
         @ColumnInfo(name = "Pokemon Identifier")
         private String pokemonIdentifier;
@@ -50,11 +61,11 @@ public interface PokemonDao {
             this.moveIdentifier = moveIdentifier;
         }
 
-        public String getPokemonId() {
+        public int getPokemonId() {
             return pokemonId;
         }
 
-        public void setPokemonId(String pokemonId) {
+        public void setPokemonId(int pokemonId) {
             this.pokemonId = pokemonId;
         }
 

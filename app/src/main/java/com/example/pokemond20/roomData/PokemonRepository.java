@@ -38,4 +38,8 @@ public class PokemonRepository {
     public ListenableFuture<List<PokemonListTuple>> getPokemonWithMove(String name) {
         return pokemonDao.pokemonListFrom(name);
     }
+
+    public ListenableFuture<List<String>> getAllPokemonIdentifiers() {
+        return pokemonDao.getAllPokemonIdentifiers();
+    }
 }

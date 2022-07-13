@@ -29,32 +29,36 @@ public class MovesToPokemonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moves_to_pokemon);
         viewModel = new ViewModelProvider(this).get(PokemonViewModel.class);
+
+        //TODO - Convert EditText to AutoCompleteTextView with names of pokemon
     }
 
     public void moveToPokemon(View view) {
-
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rvPokemonList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        try {
-            String moveName = ((EditText) findViewById(R.id.etxtMoveInput))
-                    .getText().toString().toLowerCase();
 
-            ListenableFuture<List<PokemonDao.PokemonListTuple>> pokemonList =
-                    viewModel.getPokemonFromMove(moveName);
+        // TODO - Add indication that the task is loading
 
-            PokemonListAdapter adapter = new PokemonListAdapter(pokemonList.get());
+        new Thread(() -> {
+            // Obtains name of move from user, queries database, and lists
+            // the Pokemon that can use them
+            try {
+                final String moveName = ((EditText) findViewById(R.id.etxtMoveInput))
+                        .getText().toString().toLowerCase();
 
-            recyclerView.setAdapter(adapter);
-            recyclerView.setLayoutManager(layoutManager);
+                List<PokemonDao.PokemonListTuple> pokemonList =
+                        viewModel.getPokemonFromMove(moveName).get();
 
-        } catch (Exception e) {
-            Log.e("\nERROR: ", e.toString());
-        }
+                recyclerView.post(() -> {
+                    PokemonListAdapter adapter = new PokemonListAdapter(pokemonList);
+                    recyclerView.setAdapter(adapter);
+                    recyclerView.setLayoutManager(layoutManager);
+                });
 
-
-
-
-
-
+            } catch (Exception e) {
+                Log.e("\nERROR: ", e.toString());
+            }
+        }).start();
     }
+
 }

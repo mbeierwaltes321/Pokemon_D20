@@ -1,6 +1,7 @@
 package com.example.pokemond20;
 
 import android.app.Application;
+import android.util.Log;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.ViewModel;
@@ -20,14 +21,21 @@ public class PokemonViewModel extends AndroidViewModel {
         pokemonRepository = new PokemonRepository(application);
     }
 
+    //TODO - Add method for getting all the pokemon identifiers
+
     public ListenableFuture<List<MoveListTuple>> getMovesFromPkmn(String name) {
-        return pokemonRepository.getMovesFromPkmn(name);
+            return pokemonRepository.getMovesFromPkmn(name);
     }
 
     public ListenableFuture<List<PokemonListTuple>> getPokemonFromMove(String name) {
-        return pokemonRepository.getPokemonWithMove(name);
+            return pokemonRepository.getPokemonWithMove(name);
+    }
+
+    public ListenableFuture<List<String>> getAllPokemonIdentifiers() {
+        return pokemonRepository.getAllPokemonIdentifiers();
     }
 
     //TODO - Add method for Pokemon Stats. Here is where the "IVs" should be calculated
+
 
 }

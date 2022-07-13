@@ -1,6 +1,7 @@
 package com.example.pokemond20.roomData.daos;
 
 import android.content.Context;
+import android.content.res.Resources;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Dao;
@@ -10,23 +11,20 @@ import com.example.pokemond20.R;
 import com.example.pokemond20.roomData.entities.Moves;
 import com.google.common.util.concurrent.ListenableFuture;
 
+import java.io.InputStream;
 import java.util.List;
+import java.util.Scanner;
 
 @Dao
 public interface MovesDao {
     @Query("SELECT * FROM moves")
     ListenableFuture<List<Moves>> getAllMoves();
 
-    /* TODO - Change query and database to allow for more user friendliness
-            1. Add move_names to database and Room
-            2. Display English names from move_names instead of the identifiers from moves
-            3. Replace pokemon.identifier with species from pokemon_species
-     */
     @Query("SELECT DISTINCT pokemon.identifier AS \"Name\", pokemon_id AS \"Pokemon ID\",\n" +
             "move_id AS \"Move ID\" , moves.identifier AS \"Move Name\"\n" +
             "FROM pokemon_moves INNER JOIN moves\n" +
             "ON move_id = moves.id INNER JOIN pokemon\n" +
-            "ON pokemon_id = pokemon.id WHERE pokemon.identifier = :pokemonName")
+            "ON pokemon_id = pokemon.id WHERE pokemon.identifier LIKE :pokemonName")
     ListenableFuture<List<MoveListTuple>> moveListFrom(String pokemonName);
 
     // Object for returned moves

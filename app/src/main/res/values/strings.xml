@@ -8,6 +8,14 @@
         FROM pokemon_moves INNER JOIN moves
         ON m_id = moves.id WHERE p_id = 1;
     </string>
+    <string name="moves_to_pokemon_query">
+        SELECT DISTINCT move_names.move_id AS "Move ID", move_names.name AS "Move Identifier",
+        pokemon_species.id AS "Pokemon ID", pokemon_species.identifier AS "Pokemon Identifier"
+        FROM pokemon_moves INNER JOIN move_names ON pokemon_moves.move_id = move_names.move_id
+        INNER JOIN pokemon ON pokemon_moves.pokemon_id = pokemon.id
+        INNER JOIN pokemon_species ON pokemon.species_id = pokemon_species.id
+        WHERE move_names.name = :moveName;
+    </string>
 
     <!-- Pokemon To Moves Strings -->
     <string name="pkmn_to_moves_button_main">Moves</string>
@@ -35,7 +43,7 @@
     <string name="new_stats_description">Enter the name of a Pokèmon,
      and hit the button to generate new stats</string>
     <string name="new_stats_button">Generate</string>
-    <string name="new_stats_pokemon_input">Enter Pokèmon name</string>
+    <string name="new_stats_pokemon_input">Pokèmon name</string>
     <string name="new_stats_pokemon_attack">Attack</string>
     <string name="new_stats_pokemon_defense">Defense</string>
     <string name="new_stats_pokemon_sp_attack">Sp. Attack</string>
